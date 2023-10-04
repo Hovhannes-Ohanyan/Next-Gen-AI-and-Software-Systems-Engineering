@@ -39,12 +39,10 @@ def hash_password(password):
         hashed_password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
         return hashed_password.decode('utf-8')
     except Exception as e:
-        # Handle the exception, e.g., log an error message or return an error response
         print(f"Error hashing password: {str(e)}")
         return None
 
 
-# Route for sign-up
 @app.route("/signup", methods=["GET", "POST"])
 def sign_up():
     global auto_increment_id
