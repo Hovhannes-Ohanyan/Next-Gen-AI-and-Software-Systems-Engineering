@@ -1,0 +1,8 @@
+{
+    "image": {"type": "binary"},
+    "content_type": {"type": "string"},
+    "mime": {"type": "string"},
+    "size": {"type": "number"},
+    "width": {"type": "number"},
+    "height": {"type": "number"}
+}
