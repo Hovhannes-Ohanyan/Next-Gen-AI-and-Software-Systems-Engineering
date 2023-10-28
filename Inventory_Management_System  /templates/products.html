@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product List</title>
+</head>
+<style>
+    /* Style the body */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f7f7f7;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Style the container */
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        margin-top: 50px;
+    }
+
+    /* Style the h1 header */
+    h1 {
+        color: #333;
+    }
+
+    /* Style the product list */
+    ul.product-list {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    ul.product-list li {
+        background-color: #fff;
+        color: #333;
+        padding: 10px;
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+        border-radius: 5px;
+    }
+
+    ul.product-list li strong {
+        font-weight: bold;
+    }
+
+    /* Style the "Add Product" link */
+    a {
+        display: block;
+        margin-top: 20px;
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: background-color 0.3s;
+    }
+
+    a:hover {
+        background-color: #0056b3;
+    }
+</style>
+<body>
+<div class="container">
+    <h1>Product List</h1>
+    <ul class="product-list">
+        {% for product in products %}
+        <li>
+            <strong>ID:</strong> {{ product[0] }}<br>
+            <strong>Name:</strong> {{ product[1] }}<br>
+            <strong>Price:</strong> {{ product[2] }}<br>
+            <strong>Stock:</strong> {{ product[3] }}<br>
+            <strong>Category ID:</strong> {{ product[4] }}<br>
+        </li>
+    {% endfor %}
+    </ul>
+    <a href="/products/add">Add Product</a>
+</div>
+</body>
+</html>
